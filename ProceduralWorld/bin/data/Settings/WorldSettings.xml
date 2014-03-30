@@ -1,0 +1,28 @@
+<Main>
+	<Gravity>1</Gravity>
+	<Dimension>5151.7, 800, 5071.09</Dimension>
+	<Heightmap_Res>137</Heightmap_Res>
+	<Gras_Laying_Method>0</Gras_Laying_Method>
+	<Placement_Max_Height>1</Placement_Max_Height>
+	<Placement_Noise_Space_Div>680</Placement_Noise_Space_Div>
+	<Placement_Noise_Threshold>0.8</Placement_Noise_Threshold>
+	<Swaying_Time_Scale>2</Swaying_Time_Scale>
+	<Swaying_Noise_Space_Div>60</Swaying_Noise_Space_Div>
+	<Swaying_Noise_Mag>1</Swaying_Noise_Mag>
+	<swayingMaxAngle>0.04</swayingMaxAngle>
+	<stalkWidth>60</stalkWidth>
+	<stalkHeight>260</stalkHeight>
+	<Flyer_Time_Scale>0.186667</Flyer_Time_Scale>
+	<Flyer_Tail_Length>6</Flyer_Tail_Length>
+	<Flyer_Tail_Time>0.02</Flyer_Tail_Time>
+	<Flyer_Swarm_Offset_Noise_Spave_Div>5</Flyer_Swarm_Offset_Noise_Spave_Div>
+	<Flyer_Swarm_Offset_Magnitude>0.1</Flyer_Swarm_Offset_Magnitude>
+	<Flyer_Min_Height>400</Flyer_Min_Height>
+	<Flyer_Time_Variation>0.483333</Flyer_Time_Variation>
+	<Flyer_Placement_Max_Height>0.8</Flyer_Placement_Max_Height>
+	<Flyer_Placement_Noise_Space_Div>4800.04</Flyer_Placement_Noise_Space_Div>
+	<Flyer_Placement_Noise_Thresh>0.11</Flyer_Placement_Noise_Thresh>
+	<Flyer_Movement_Space_Divider>960.005</Flyer_Movement_Space_Divider>
+	<Flyer_Movement_Mag>489.796, 183.673, 489.796</Flyer_Movement_Mag>
+<Main/>
+</Main>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>172AA5A8-C8F7-44D9-90DF-42006AE38ED5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>emptyExample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D5DCBA0D-9AAC-49A2-9409-C20B20A9F810</key>
+		<string>https://nanika.svn.beanstalkapp.com/misc_projects/research/GeometryShadersLearning</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>emptyExample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D5DCBA0D-9AAC-49A2-9409-C20B20A9F810</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>D5DCBA0D-9AAC-49A2-9409-C20B20A9F810</key>
+		<string>https://nanika.svn.beanstalkapp.com/misc_projects</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://nanika.svn.beanstalkapp.com/misc_projects/research/GeometryShadersLearning/emptyExample.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D5DCBA0D-9AAC-49A2-9409-C20B20A9F810</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D5DCBA0D-9AAC-49A2-9409-C20B20A9F810</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GeometryShadersLearning</string>
+		</dict>
+	</array>
+</dict>
+</plist>
