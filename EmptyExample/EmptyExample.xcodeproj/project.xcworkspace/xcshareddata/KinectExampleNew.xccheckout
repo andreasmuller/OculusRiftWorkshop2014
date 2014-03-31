@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A63CEF85-D883-4D69-8950-2EDE5B050247</string>
+	<key>IDESourceControlProjectName</key>
+	<string>KinectExampleNew</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>16A42594-391E-4160-8E5C-F88716C03B01</key>
+		<string>ssh://hahakid.dyndns.org//git_repos/resonate_oculus_rift_workshop_2014/</string>
+		<key>67763968-08E6-44BB-9ECE-94508850781E</key>
+		<string>https://github.com/andreasmuller/ofxOculusRift.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>KinectExampleNew/KinectExampleNew.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>16A42594-391E-4160-8E5C-F88716C03B01</key>
+		<string>../../..</string>
+		<key>67763968-08E6-44BB-9ECE-94508850781E</key>
+		<string>../../../../../addons/ofxOculusRift</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://hahakid.dyndns.org//git_repos/resonate_oculus_rift_workshop_2014/</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>16A42594-391E-4160-8E5C-F88716C03B01</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>16A42594-391E-4160-8E5C-F88716C03B01</string>
+			<key>IDESourceControlWCCName</key>
+			<string>OculusRiftWorkshop</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>67763968-08E6-44BB-9ECE-94508850781E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxOculusRift</string>
+		</dict>
+	</array>
+</dict>
+</plist>
