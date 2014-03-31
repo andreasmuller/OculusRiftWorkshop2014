@@ -60,6 +60,8 @@ class ofApp : public ofBaseApp
 	
 	float mouseAffectionRadius;
 	float lineConnectionMaxDistance;
+	float lineConnectionMaxDistanceMin;
+	float lineConnectionMaxDistanceMax;
 	ofMesh linesMesh;
     
     ofVec3f cursorRift;

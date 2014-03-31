@@ -50,6 +50,8 @@ void ofApp::setup()
 	
 	lastMouse = ofVec2f( ofGetMouseX(), ofGetMouseY() );
 	
+	lineConnectionMaxDistanceMin = 20.0f;
+	lineConnectionMaxDistanceMax = 80.0f;
 	lineConnectionMaxDistance = 0.0f;
 	mouseAffectionRadius = 300.0f;
 	
@@ -70,7 +72,7 @@ void ofApp::update()
 	
 
 	// Update scene
-	float perlinTime = ofGetElapsedTimef()/80.0;
+	float perlinTime = ofGetElapsedTimef()/50.0;
 	float perlinSpaceDivider = 100.0f;
 	for(int i = 0; i < demos.size(); i++)
 	{
@@ -80,8 +82,10 @@ void ofApp::update()
 									    demos[i].pos.x/perlinSpaceDivider,
 									    demos[i].pos.z/perlinSpaceDivider );
 		
-		demos[i].pos.y = ofMap( tmpNoise, -1.0f, 1.0, 0.0f, 600.0f );
-		demos[i].pos.y *= ofMap(tmpDistFromCentre, 0.0f, 1.0f, 0.1f, 1.0f);
+		demos[i].pos.y = ofMap( tmpNoise, -1.0f, 1.0, 0.0f, 800.0f );
+		float tmpFrac = ofMap(tmpDistFromCentre, 0.0f, 1.0f, 0.3f, 1.0f);
+		tmpFrac = 1.0f - cosf( tmpFrac * (PI * 0.5f));
+		demos[i].pos.y *= tmpFrac;
 	}
     
 	
@@ -163,15 +167,14 @@ void ofApp::drawScene()
 		// Draw the floor
 		ofSetColor(20, 20, 20);
 		ofPushMatrix();
-			ofRotate(90, 1, 0, 0);
+			ofRotate(90,	1, 0, 0);
 			ofDrawPlane( 1600.0f, 1600.0f );
 		ofPopMatrix();
 
 		ofDisableDepthTest();
 		ofSetColor(40, 40, 40);
 		ofPushMatrix();
-			ofRotate(90, 0, 0, -1);
-			
+			ofRotate(90,	0, 0, -1);
 			ofDrawGridPlane(800.0f, 10.0f, false );
 		ofPopMatrix();
 		ofEnableDepthTest();
@@ -193,10 +196,18 @@ void ofApp::drawScene()
 			ofPopMatrix();
 		}
 		
-		// Draw the text
+		// Draw the text and an indicator for the distance form the mouse we are using to reveal or hide the sculpture
 	
 		ofSetColor( ofColor::white );
-		meshFont.drawStringAsShapes("Lines Max Connection Distance: " + ofToString(lineConnectionMaxDistance, 1), -450, 150 );
+		meshFont.drawStringAsShapes("Lines Max Connection Distance: " + ofToString(lineConnectionMaxDistance, 1), -450, 170 );
+		ofPushMatrix();
+			ofTranslate( ofVec3f(-450, 150, 0 ) );
+			ofNoFill();
+				ofRect( 0,0, 250, 10 );
+			ofFill();
+				ofRect( 0,0, 250 * ofMap( lineConnectionMaxDistance, lineConnectionMaxDistanceMin, lineConnectionMaxDistanceMax, 0.0f, 1.0f), 10 );
+		ofPopMatrix();
+	
 		meshFont.drawStringAsShapes("Mouse Affection Radius: " + ofToString(mouseAffectionRadius, 1), -450, 130 );
 	
 	
@@ -235,7 +246,7 @@ void ofApp::updateLinesMesh()
 	ofFloatColor scratchColor;
 	scratchColor.set( 1.0f, 1.0f, 1.0f );
 	
-	lineConnectionMaxDistance =  ofMap( cosf( currTime / 10.0f ) , -1.0f, 1.0f, 20.0f, 60.0f); //   ofGetMouseY() / 10.0f;
+	lineConnectionMaxDistance =  ofMap( cosf( currTime / 7.0f ) , -1.0f, 1.0f, lineConnectionMaxDistanceMin, lineConnectionMaxDistanceMax); //   ofGetMouseY() / 10.0f;
 	
 	// how many slots do we need to check on each side?
 	int spacePartitioningIndexDistanceX = ceil(lineConnectionMaxDistance / spacePartitioningGridWidth);
