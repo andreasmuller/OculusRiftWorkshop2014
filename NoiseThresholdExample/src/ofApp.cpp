@@ -17,6 +17,9 @@ void ofApp::setup()
 	gui.add( thresholdHigh.set( "Treshold High", 127, 0, 255 ) );
 	gui.add( invert.set( "Invert Threshold", false ) );
 	
+	noiseStartX = 0;
+	noiseStartY = 0;
+	
 	
 	drawGui = true;
 	
@@ -26,6 +29,11 @@ void ofApp::setup()
 //--------------------------------------------------------------
 void ofApp::update()
 {
+	if( ofGetKeyPressed(OF_KEY_LEFT)  )  { noiseStartX -= 5; }
+	if( ofGetKeyPressed(OF_KEY_RIGHT ) ) { noiseStartX += 5; }
+	if( ofGetKeyPressed(OF_KEY_UP)  )    { noiseStartY -= 5; }
+	if( ofGetKeyPressed(OF_KEY_DOWN ) )  { noiseStartY += 5; }
+	
 	float time = 0.0f;
 	if( animate ) time = ofGetElapsedTimef();
 	
@@ -39,7 +47,7 @@ void ofApp::update()
 			// We're grabbing a single reading from the noise function here, but we can also add together more
 			// readings at different frequencies to make more complex patterns
 			
-			float tmpNoise = ofNoise( x / noiseFrequency, y / noiseFrequency, time );
+			float tmpNoise = ofNoise( (noiseStartX + x) / noiseFrequency, (noiseStartY + y) / noiseFrequency, time );
 			
 			pixels[tmpIndex] = tmpNoise * 255.0f;
 			tmpIndex++;

@@ -24,8 +24,6 @@ class ofApp : public ofBaseApp
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 	
-
-	
 		ofParameter<int> resolution;
 		ofParameter<float> noiseFrequency;
 		ofParameter<bool> animate;
@@ -34,6 +32,9 @@ class ofApp : public ofBaseApp
 		ofParameter<int> thresholdLow;
 		ofParameter<int> thresholdHigh;
 		ofParameter<bool> invert;
+	
+		int noiseStartX;
+		int noiseStartY;
 	
 		ofImage noiseImage;
 	
