@@ -129,7 +129,7 @@ void ofApp::drawPointCloud()
 {
 	if( !kinect.isConnected() )
 	{
-		return false;
+		return;
 	}
 	
 	int w = 640;

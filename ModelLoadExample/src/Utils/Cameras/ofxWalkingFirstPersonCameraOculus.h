@@ -52,7 +52,7 @@ class ofxWalkingFirstPersonCameraOculus : public ofxWalkingFirstPersonCamera
 		}
 	
 		// ----------------------------------------------
-		void getHeadsetOrientation()
+		ofQuaternion getHeadsetOrientation()
 		{
 			return headsetOrientation;
 		}

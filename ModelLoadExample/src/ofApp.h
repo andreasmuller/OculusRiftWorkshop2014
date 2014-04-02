@@ -3,9 +3,8 @@
 #include "ofMain.h"
 #include "ofxOculusRift.h"
 #include "ofxGui.h"
-#include "ofxOpenCv.h"
+//#include "ofxOpenCv.h"
 #include "ofxAssimpModelLoader.h"
-//#include "ofxKinect.h"
 
 #include "Utils/Cameras/ofxWalkingFirstPersonCameraOculus.h"
 

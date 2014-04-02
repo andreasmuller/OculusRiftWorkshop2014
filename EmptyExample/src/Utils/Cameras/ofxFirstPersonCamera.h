@@ -194,7 +194,7 @@ class ofxFirstPersonCamera : public ofCamera
 		}
 	
 		// ----------------------------------------------
-		void getUseJoystick()
+		bool getUseJoystick()
 		{
 			return useJoystick;
 		}

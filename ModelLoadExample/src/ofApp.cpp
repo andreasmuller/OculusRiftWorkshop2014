@@ -10,7 +10,9 @@ void ofApp::setup()
 	
 	gui.setup( "Settings", "Settings/Main.xml" );
 
-	drawGui = true;
+	// add any gui parameters here
+
+	drawGui = false;
 	
 	
 	//enable mouse;
@@ -48,7 +50,6 @@ void ofApp::setup()
 //--------------------------------------------------------------
 void ofApp::update()
 {
-	
 	camera.setHeadsetOrientation( oculusRift.getOrientationQuat() );
 	camera.update();
 	
@@ -67,7 +68,6 @@ void ofApp::draw() {
 
 	if(oculusRift.isSetup())
 	{
-        
 		ofEnableDepthTest();
 		
 			oculusRift.beginLeftEye();
@@ -128,8 +128,8 @@ void ofApp::drawScene()
 		noisePos.x = ofRandom( -100, 100 );
 		noisePos.z = ofRandom( -100, 100 );
 		
-		//noisePos.x = 31; // uncomment to get a conga line
-		//noisePos.z = 70;
+		noisePos.x = 31; // uncomment these two lines to get a conga line
+		noisePos.z = 70;
 		
 		ofPushMatrix();
 		
