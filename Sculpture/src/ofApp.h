@@ -7,6 +7,8 @@
 // Lots in this example comes from the great demo by James George:
 // https://github.com/obviousjim/ofxOculusRift/blob/master/example-OculusRiftRendering/src/testApp.h
 
+// test from iOS app
+
 // -----------------------------------------
 class DemoSphere
 {
