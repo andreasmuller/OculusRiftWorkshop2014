@@ -14,7 +14,6 @@ void ofApp::setup()
 
 	drawGui = false;
 	
-	
 	//enable mouse;
 	camera.begin();
 	camera.end();
