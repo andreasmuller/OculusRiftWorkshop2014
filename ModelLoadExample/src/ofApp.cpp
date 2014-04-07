@@ -56,8 +56,6 @@ void ofApp::update()
 	ofBackground(100, 100, 100);
 	
 	model.update();
-	
-	camera.update();
 
 }
 
@@ -89,7 +87,7 @@ void ofApp::draw() {
 		camera.end();
 		
 		ofSetColor(255, 255, 255);
-		fontSmall.drawString( ofToString( ofGetFrameRate(), 2), ofGetWidth()-20, ofGetHeight() - 20 );
+		fontSmall.drawString( ofToString( ofGetFrameRate(), 2), ofGetWidth()-30, ofGetHeight() - 6 );
 	}
 	
 	if( drawGui )
@@ -128,8 +126,8 @@ void ofApp::drawScene()
 		noisePos.x = ofRandom( -100, 100 );
 		noisePos.z = ofRandom( -100, 100 );
 		
-		noisePos.x = 31; // uncomment these two lines to get a conga line
-		noisePos.z = 70;
+		//noisePos.x = 31; // uncomment these two lines to get a conga line
+		//noisePos.z = 70;
 		
 		ofPushMatrix();
 		

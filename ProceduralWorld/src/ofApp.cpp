@@ -71,31 +71,35 @@ void ofApp::setup(){
 	
 	streakTexture.loadImage("Textures/StreakRound.png");
 	
+	//enable mouse;
+	camera.begin();
+	camera.end();
+	camera.setGlobalPosition( 0, 100, 500 ); // let's start by stepping back a little bit and put ourselves a few units up from the floor
 	
-	godCamera.setNearClip(1.0f);
-	godCamera.setFarClip(4096.0f);
-	godCamera.setAutoDistance( false );
-	godCamera.orbit( 100, -20, 500, ofVec3f(0,600,0) );
-//	godCamera.setPosition(ofVec3f(0,600,0));
+	oculusRift.baseCamera = &camera;
+	oculusRift.setup();
 	
-	walkingCamera.setEyeHeight(200.0f);
+	if( oculusRift.isSetup() )
+	{
+		ofHideCursor();
+	}
+	else
+	{
+		camera.setConstrainToYAxis( false );
+	}
 	
-//	isWalking = false;
-//	camera = &godCamera;
 	
-	isWalking = true;
-	camera = &walkingCamera;
+	camera.setEyeHeight(200.0f);
 	
 	noisePositionX = 0;
 	noisePositionZ = 0;
-	
 }
 
 //--------------------------------------------------------------
 void ofApp::update()
 {
 
-	// lets allow teleporting to see what the world will look like faraway without haing to walk all the way over there
+	// lets allow teleporting to see what the world will look like faraway without having to walk all the way over there
 	float teleportSpeed = 3000.0f;
 	ofVec3f teleportOffset(0,0,0);
 	if( ofGetKeyPressed( OF_KEY_UP ) )		{ teleportOffset.x += teleportSpeed; }
@@ -104,25 +108,26 @@ void ofApp::update()
 	if( ofGetKeyPressed( OF_KEY_RIGHT ) )	{ teleportOffset.z -= teleportSpeed; }
 	if( teleportOffset.length() > 0.0f )
 	{
-		walkingCamera.setPosition( walkingCamera.getPosition() + teleportOffset );
-		walkingCamera.update();
+		camera.setPosition( camera.getPosition() + teleportOffset );
+		camera.update();
 		
-		godCamera.setPosition( walkingCamera.getPosition() );
+		camera.setPosition( camera.getPosition() );
 	}
 	
 	
-	if( doGravity ) { walkingCamera.setGravity( -12.0f ); }
-	else { walkingCamera.setGravity( 0.0f ); }
+	if( doGravity ) { camera.setGravity( -12.0f ); }
+	else { camera.setGravity( 0.0f ); }
 		
-	walkingCamera.setFarClip( max(dimension.get().x, dimension.get().z) );
+	camera.setFarClip( max(dimension.get().x, dimension.get().z) );
 	
-#if defined( USE_OCULUS_RIFT )
-	camera.setHeadsetOrientation( oculusRift.getOrientationQuat() );
-#endif
-	walkingCamera.update();
+	if( oculusRift.isSetup() )
+	{
+		camera.setHeadsetOrientation( oculusRift.getOrientationQuat() );
+	}
+	camera.update();
 	
-	setTerrainCentrePosition( ofVec3f(walkingCamera.getPosition().x, 0, walkingCamera.getPosition().z) );
-	walkingCamera.setGroundLevelY( getTerrainHeightAtWorldSpaceCoordinate( camera->getPosition().x, camera->getPosition().z ) );
+	setTerrainCentrePosition( ofVec3f(camera.getPosition().x, 0, camera.getPosition().z) );
+	camera.setGroundLevelY( getTerrainHeightAtWorldSpaceCoordinate( camera.getPosition().x, camera.getPosition().z ) );
 	
 	
 	// all these generator functions are perfect for parallelising
@@ -158,12 +163,11 @@ void ofApp::setTerrainCentrePosition( ofVec3f _position )
 //--------------------------------------------------------------
 void ofApp::draw()
 {
-	drawScene( camera );
+	drawScene( &camera );
 	
 	ofSetColor( ofColor::white );
-	string camName = "(g)"; if( isWalking ) { camName = "(w)"; }
 	
-	fontSmall.drawString( "fps: " + ofToString( ofGetFrameRate(), 2) + " " + camName,  10, ofGetHeight() - 10 );
+	fontSmall.drawString( "fps: " + ofToString( ofGetFrameRate(), 2),  10, ofGetHeight() - 10 );
 	
 	if( showGui )
 	{
@@ -184,19 +188,15 @@ void ofApp::drawScene( ofCamera* _cam )
 	ofEnableDepthTest();
 	_cam->begin();
 		
-		//ofTranslate( ofVec3f(0,-300,0) );
-
 		ofPushMatrix();
 			tmpLight.setPosition( ofVec3f(0,1000,0) );
 			tmpLight.enable();
 		
-			//ofSetColor( ofColor::grey );
 			ofFloatColor groundColor;
 			groundColor.setHsb(fmodf( ofNoise(noiseStartPos.x / 50000.0f, noiseStartPos.y / 50000.0f) + 0.08f, 1.0f), 0.3, 0.5f );
 			ofSetColor( groundColor );
 	
 			ofPushMatrix();
-				//ofTranslate( terrainMeshRenderingPosition );
 				terrainMesh.draw();
 				if( debugDrawNormals )
 				{
@@ -208,9 +208,7 @@ void ofApp::drawScene( ofCamera* _cam )
 		ofPopMatrix();
 		
 		ofPushMatrix();
-	
-			//ofTranslate( ofVec3f(0,30,0) );
-	
+
 			grassShader.begin();
 		
 				grassShader.setUniform1f("timeSecs", ofGetElapsedTimef() );
@@ -298,23 +296,9 @@ void ofApp::keyPressed(int key){
 	{
 		showGui = !showGui;
 	}
-	else if( key == 'c' )
+	else if( key == 'g' )
 	{
-		isWalking = !isWalking;
-		if( isWalking )
-		{
-			walkingCamera.enableAutoUpdate();
-			camera = &walkingCamera;
-		}
-		else
-		{
-			walkingCamera.disableAutoUpdate();
-			//godCamera.resetTransform();
-			//godCamera.lookAt( walkingCamera.getPosition() );
-			godCamera.setPosition( walkingCamera.getPosition() );
-			godCamera.orbit( 100, -20, 100 );
-			camera = &godCamera;
-		}
+		doGravity = !doGravity;
 	}
 	else if( key == 'f' )
 	{

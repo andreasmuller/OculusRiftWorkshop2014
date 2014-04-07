@@ -3,8 +3,6 @@
 //--------------------------------------------------------------
 void ofApp::setup()
 {
-	ofSetLogLevel(OF_LOG_VERBOSE);
-	
 	fontSmall.loadFont("Fonts/DIN.otf", 8);
 	fontLarge.loadFont("Fonts/DIN.otf", 20);
 	
@@ -24,20 +22,18 @@ void ofApp::setup()
 	{
 		ofHideCursor();
 	}
+	else
+	{
+		camera.setConstrainToYAxis( false );
+	}
 	
 }
 
 //--------------------------------------------------------------
 void ofApp::update()
 {
-	
 	camera.setHeadsetOrientation( oculusRift.getOrientationQuat() );
 	camera.update();
-	
-	ofBackground(100, 100, 100);
-	
-	camera.update();
-
 }
 
 //--------------------------------------------------------------
@@ -47,7 +43,6 @@ void ofApp::draw() {
 
 	if(oculusRift.isSetup())
 	{
-        
 		ofEnableDepthTest();
 		
 			oculusRift.beginLeftEye();
@@ -83,12 +78,6 @@ void ofApp::drawScene()
 {
 	drawFloor();
 	
-	ofSetColor( ofColor::white );
-	
-	ofPushMatrix();
-
-
-	ofPopMatrix();
 }
 
 //--------------------------------------------------------------

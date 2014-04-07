@@ -78,7 +78,6 @@ void ofApp::draw() {
 
 	if(oculusRift.isSetup())
 	{
-        
 		ofEnableDepthTest();
 		
 			oculusRift.beginLeftEye();
@@ -100,7 +99,7 @@ void ofApp::draw() {
 		camera.end();
 		
 		ofSetColor(255, 255, 255);
-		fontSmall.drawString( ofToString( ofGetFrameRate(), 2), ofGetWidth()-20, ofGetHeight() - 20 );
+		fontSmall.drawString( ofToString( ofGetFrameRate(), 2), ofGetWidth()-30, ofGetHeight()-6 );
 	}
 	
 	if( drawGui )

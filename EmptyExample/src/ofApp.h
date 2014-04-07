@@ -30,7 +30,6 @@ class ofApp : public ofBaseApp
 		ofxOculusRift		oculusRift;
 	
 		ofxWalkingFirstPersonCameraOculus camera;
-		//ofxFirstPersonCamera camera;
 	
 		ofTrueTypeFont		fontSmall;
 		ofTrueTypeFont		fontLarge;

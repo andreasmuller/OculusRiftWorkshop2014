@@ -2,9 +2,12 @@
 
 #include "ofMain.h"
 #include "ofxGui.h"
-//#include "ofxAutoReloadedShader.h"
+#include "ofxOculusRift.h"
+
 #include "ofMeshExt.h"
 #include "Cameras/ofxWalkingFirstPersonCamera.h"
+#include "Cameras/ofxWalkingFirstPersonCameraOculus.h"
+
 
 class ofApp : public ofBaseApp
 {
@@ -95,9 +98,11 @@ class ofApp : public ofBaseApp
 		ofShader flyersShader;	
 
 		bool isWalking;
-		ofEasyCam godCamera;
-		ofxWalkingFirstPersonCamera walkingCamera;
-		ofCamera* camera;
+		//ofEasyCam godCamera;
+		ofxWalkingFirstPersonCameraOculus camera;
+		//ofCamera* camera;
+	
+		ofxOculusRift		oculusRift;
 	
 		bool debugDrawNormals;
 		ofMesh debugNormalsMesh;

@@ -5,34 +5,46 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>78E5C5AF-2BE0-4C91-BCC2-DD4C7365242A</string>
+	<string>67BE7B77-B348-494B-871F-C5EBF9654431</string>
 	<key>IDESourceControlProjectName</key>
-	<string>OculusRenderingBasic</string>
+	<string>ProceduralWorld</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>E1BA6877-E16A-46F5-AD97-589112C72322</key>
+		<key>83A06410-4575-4482-A7AE-3B1526BFA515</key>
 		<string>https://github.com/obviousjim/ofxOculusRift.git</string>
+		<key>8F358075-D71C-447C-B23A-A645EE759DC0</key>
+		<string>ssh://hahakid.dyndns.org//git_repos/resonate_oculus_rift_workshop_2014/</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>example-OculusRiftRendering/OculusRenderingBasic.xcodeproj/project.xcworkspace</string>
+	<string>ProceduralWorld/ProceduralWorld.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>E1BA6877-E16A-46F5-AD97-589112C72322</key>
+		<key>83A06410-4575-4482-A7AE-3B1526BFA515</key>
+		<string>../../../../../addons/ofxOculusRift</string>
+		<key>8F358075-D71C-447C-B23A-A645EE759DC0</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/obviousjim/ofxOculusRift.git</string>
+	<string>ssh://hahakid.dyndns.org//git_repos/resonate_oculus_rift_workshop_2014/</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E1BA6877-E16A-46F5-AD97-589112C72322</string>
+	<string>8F358075-D71C-447C-B23A-A645EE759DC0</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E1BA6877-E16A-46F5-AD97-589112C72322</string>
+			<string>8F358075-D71C-447C-B23A-A645EE759DC0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>OculusRiftWorkshop</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>83A06410-4575-4482-A7AE-3B1526BFA515</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ofxOculusRift</string>
 		</dict>

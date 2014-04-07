@@ -17,13 +17,14 @@ class ofxWalkingFirstPersonCameraOculus : public ofxWalkingFirstPersonCamera
 		// ----------------------------------------------
 		ofxWalkingFirstPersonCameraOculus()
 		{
+			constrainToYAxis = true;
 			disableAutoUpdate();
 		}
 	
 		// ----------------------------------------------
 		void update()
 		{
-			updateRotationMouse( true );
+			updateRotationMouse( constrainToYAxis );
 			updateTranslationBasedOnHeadsetDirection();
 			updatePhysics();
 		}
@@ -62,8 +63,21 @@ class ofxWalkingFirstPersonCameraOculus : public ofxWalkingFirstPersonCamera
 		{
 			headsetOrientation = _headsetOrientation;
 		}
+
+		// ----------------------------------------------
+		void setConstrainToYAxis( bool _constrainToYAxis )
+		{
+			constrainToYAxis = _constrainToYAxis;
+		}
+	
+		// ----------------------------------------------
+		void getConstrainToYAxis()
+		{
+			return constrainToYAxis;
+		}
 	
 	protected:
 	
 		ofQuaternion headsetOrientation;
+		bool constrainToYAxis;
 };

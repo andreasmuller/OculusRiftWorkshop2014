@@ -5,9 +5,9 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>642ECDF1-130B-48B4-AAD2-66E462DAF6F9</string>
+	<string>7F4AA77B-ACB2-4CAE-B6A3-C00303E76A0C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>EmptyExample</string>
+	<string>Sculpture</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1AF034CE-7F89-4D0C-B01C-162CCBC6D4E3</key>
@@ -16,7 +16,7 @@
 		<string>https://github.com/obviousjim/ofxOculusRift.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>EmptyExample/EmptyExample.xcodeproj/project.xcworkspace</string>
+	<string>Sculpture/Sculpture.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1AF034CE-7F89-4D0C-B01C-162CCBC6D4E3</key>
